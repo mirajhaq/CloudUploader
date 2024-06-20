@@ -15,31 +15,25 @@ CloudUploader is a batch-based CLI tool that allows users to quickly upload file
 1. **Download and install Azure CLI** from the [official website](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 2. **Log in to your Azure account**:
 In cmd
-   ```batch
    az login
 
 ### Step 2: Create Azure Resources
 ## Resource Group
-```batch
 az group create --name MyResourceGroup --location ukwest
 
 ## Storage Account
-```batch
 az storage account create --name mirajstoragemydude --resource-group MyResourceGroup --location ukwest --sku Standard_LRS
 
 ## Storage Container
-```batch
 az storage container create --name mirajcontainermydude --account-name mystorageaccount
 
 ### Step 3: Set Up Authentication
-```batch
 az storage account keys list --resource-group MyResourceGroup --account-name mirajstoragemydude --output table
 
 Copy one of the keys (value of the key1 or key2 field).
 
 ## Set Enivronment Variables
 In CMD:
-```batch
 set AZURE_STORAGE_ACCOUNT=mystorageaccount
 set AZURE_STORAGE_KEY=your-storage-account-key
 set AZURE_STORAGE_CONTAINER=mycontainer
